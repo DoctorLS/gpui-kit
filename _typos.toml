@@ -14,6 +14,15 @@ backgrund = "backgrund"
 wtach = "wtach"
 netwrok = "netwrok"
 workspce = "workspce"
+# Albanian words in the report text and interface of examples/gastroskopi.
+aktive = "aktive"
+foto = "foto"
+histori = "histori"
+lokale = "lokale"
+mor = "mor"
+negativ = "negativ"
+normale = "normale"
+tekst = "tekst"
 
 [files]
 extend-exclude = ["crates/story/src/fixtures/"]

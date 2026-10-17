@@ -39,6 +39,7 @@ members = [
     "examples/markdown_table",
     "examples/ai_recipes",
     "examples/speech",
+    "examples/gastroskopi",
     "crates/shell",
     "crates/shell/rquickjs-compat",
 ]

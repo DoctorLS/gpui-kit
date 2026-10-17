@@ -18,6 +18,7 @@ not enable the gallery's test-support development dependency.
 | Streaming Markdown | `cargo run -p example-stream-markdown` |
 | Text selection | `cargo run -p text_selection` |
 | Touch selection | `cargo run -p touch_selection` |
+| Gastroscopy reports, a complete application | `cargo run -p gastroskopi` |
 
 Shared sample documents live in `fixtures/`.
 
