@@ -4,6 +4,9 @@
 //! details live in the platform's data directory instead of browser storage, and
 //! backups and patient files stay interchangeable with the browser edition.
 
+// A release build is a windowed Windows program: no console opens beside it.
+#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+
 mod archive;
 mod backup;
 mod dialogs;

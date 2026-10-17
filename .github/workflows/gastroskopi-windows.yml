@@ -1,0 +1,35 @@
+name: Gastroskopi for Windows
+
+# Builds the gastroscopy report application as a Windows program and attaches
+# it to the run as a download, for people who do not build from source.
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - claude/real-app-conversion-jm8r2c
+    paths:
+      - examples/gastroskopi/**
+      - .github/workflows/gastroskopi-windows.yml
+
+jobs:
+  build:
+    name: Build Gastroskopi.exe
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          cache-shared-key: gastroskopi-windows
+      - name: Build
+        run: cargo build -p gastroskopi --release --locked
+      - name: Package
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force dist | Out-Null
+          Copy-Item target/release/gastroskopi.exe dist/Gastroskopi.exe
+          Copy-Item examples/gastroskopi/README.md dist/README.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Gastroskopi-windows
+          path: dist/
+          retention-days: 90
